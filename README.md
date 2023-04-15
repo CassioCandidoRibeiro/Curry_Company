@@ -69,7 +69,7 @@ Cada visão é representada pelo seguinte conjunto de métricas.
 # 4. Top 5 insights
 
 1. A sazonalidade da quantidade de pedidos é diária. Há uma variação de aproximadamente 10% do número de pedidos em dia sequenciais.
-2. A área metropolitana concentra a maior quantidade de entregas apesar do transito engarrafado.
+2. A área metropolitana concentra a maior quantidade de entregas apesar do trânsito engarrafado.
 3. Um terço dos veículos estão em situação ruim, são 25% mais lentos que a média dos demais.
 4. Em média, os entregadores com mais de 30 anos são 26% mais lentos  
 5. As melhores avaliações são para as entregas mais rápidas
