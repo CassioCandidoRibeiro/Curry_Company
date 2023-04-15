@@ -526,15 +526,15 @@ def tempo_medio_e_desvio_padrao_por_tipo_de_area(df):
   df_aux.index += 1
   return df_aux
 
-# 4. O tempo médio e o desvio padrão de entrega por tipo de área e tipo de pedido.
-def tempo_medio_e_desvio_padrao_por_tipo_de_area_e_tipo_de_pedido(df):
+# 4. O tempo médio e o desvio padrão de entrega por tipo de pedido.
+def tempo_medio_e_desvio_padrao_por_tipo_de_pedido(df):
   df_aux = df.loc[:,['Tempo de entrega (min)','Tipo de pedido']].groupby('Tipo de pedido').agg({'Tempo de entrega (min)':['mean','mean','std']}).round(3).astype(int).reset_index()
   df_aux.columns=['Tipo de pedido','Tempo médio de entrega (min)','Mediana','Desvio padrão']
   df_aux.index += 1
   return df_aux
 
-# 5. O tempo médio e o desvio padrão de entrega por tipo de área e densidade de tráfego.
-def tempo_medio_e_desvio_padrao_por_tipo_de_area_e_trafego(df):
+# 5. O tempo médio e o desvio padrão de entrega por densidade de tráfego.
+def tempo_medio_e_desvio_padrao_por_tipo_de_trafego(df):
   df_aux = df.loc[:,['Tempo de entrega (min)','Densidade de tráfego']].groupby('Densidade de tráfego').agg({'Tempo de entrega (min)':['mean','median','std']}).round(3).astype(int).reset_index()
   df_aux.columns=['Densidade de tráfego','Tempo médio de entrega (min)','Mediana','Desvio padrão']
   df_aux.index += 1
@@ -557,3 +557,4 @@ def download_csv(url):
   content = response.content.decode("utf-8")
   return content
 
+  

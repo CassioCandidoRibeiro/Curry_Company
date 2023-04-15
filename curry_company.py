@@ -83,11 +83,10 @@ df = df.loc[ linhas_filtradas, : ]
 linhas_filtradas = df['Condição climática'].isin( filtro_de_clima )
 df = df.loc[ linhas_filtradas, : ]
 
-
 ################################################################
 # Botão de Download
 ################################################################
-st.sidebar.write('---')
+
 url = "https://raw.githubusercontent.com/CassioCandidoRibeiro/curry_company/main/curry.csv"
 arquivo = fr.download_csv(url)
 st.sidebar.download_button(
@@ -120,7 +119,7 @@ tab1, tab2, tab3 = st.tabs([
 #######################################
 # 1. Quantidade de pedidos por dia.
 # 2. Quantidade de pedidos por semana.
-# 3. Distribuição dos pedidos por densidade de tráfego.
+# 3. Distribuição dos pedidos por tipo de área.
 # 4. Distribuição dos pedidos por densidade de tráfego.
 # 5. Comparação do volume de pedidos por tipo de área e densidade de tráfego.
 # 6. A quantidade de pedidos por entregador por semana.
@@ -264,8 +263,8 @@ with tab3:
             '1. A quantidade de entregadores únicos.',
             '2. A distância média dos resturantes e dos locais de entrega.',
             '3. O tempo médio e o desvio padrão de entrega por tipo de área.',
-            '4. O tempo médio e o desvio padrão de entrega por tipo de área e tipo de pedido.',
-            '5. O tempo médio e o desvio padrão de entrega por tipo de área e densidade de tráfego.',
+            '4. O tempo médio e o desvio padrão de entrega por tipo de pedido.',
+            '5. O tempo médio e o desvio padrão de entrega por densidade de tráfego.',
             '6. O tempo médio de entrega durantes os Festivais.'))
     
     if opcao == '1. A quantidade de entregadores únicos.':
@@ -277,11 +276,11 @@ with tab3:
     elif opcao == '3. O tempo médio e o desvio padrão de entrega por tipo de área.':
         st.table( fr.tempo_medio_e_desvio_padrao_por_tipo_de_area(df))        
 
-    elif opcao == '4. O tempo médio e o desvio padrão de entrega por tipo de área e tipo de pedido.':
-        st.table( fr.tempo_medio_e_desvio_padrao_por_tipo_de_area_e_tipo_de_pedido(df))
+    elif opcao == '4. O tempo médio e o desvio padrão de entrega por tipo de pedido.':
+        st.table( fr.tempo_medio_e_desvio_padrao_por_tipo_de_pedido(df))
 
-    elif opcao == '5. O tempo médio e o desvio padrão de entrega por tipo de área e densidade de tráfego.':
-        st.table( fr.tempo_medio_e_desvio_padrao_por_tipo_de_area_e_trafego(df))    
+    elif opcao == '5. O tempo médio e o desvio padrão de entrega por densidade de tráfego.':
+        st.table( fr.tempo_medio_e_desvio_padrao_por_tipo_de_trafego(df))    
 
     elif opcao == '6. O tempo médio de entrega durantes os Festivais.':
         st.table( fr.tempo_medio_e_desvio_padrao_durante_o_festival(df))   
