@@ -191,7 +191,9 @@ with tab2:
             '11. Tempo médio de entrega por condição do veículo.',
             '12. Tempo médio de entrega por idade do entregador.',
             '13. Tempo médio de entrega por entregas multiplas.',
-            '14. Tempo médio de entrega por avaliação dos entregadores.'))
+            '14. Tempo médio de entrega por avaliação dos entregadores.',
+            '15. Tempo médio de entrega por condição climática.'
+            ))
     
     if opcao == '1. A quantidade de entregadores por idade.':
             st.plotly_chart( fr.quantidade_de_entregadores_por_idade(df), ue_container_width=True)
@@ -245,7 +247,11 @@ with tab2:
         st.plotly_chart( fr.tempo_medio_de_entrega_por_entregas_multiplas(df), ue_container_width=True)
 
     elif opcao == '14. Tempo médio de entrega por avaliação dos entregadores.':
-        st.plotly_chart( fr.tempo_medio_de_entrega_por_avaliacao_dos_entregadores(df), ue_container_width=True) 
+        st.plotly_chart( fr.tempo_medio_de_entrega_por_avaliacao_dos_entregadores(df), ue_container_width=True)
+    
+    elif opcao == '15. Tempo médio de entrega por condição climática.':
+        st.plotly_chart( fr.tempo_medio_de_entrega_por_condicao_climatica(df), ue_container_width=True)
+
 
 #######################################
 # 3. Restaurante
@@ -284,6 +290,10 @@ with tab3:
 
     elif opcao == '6. O tempo médio de entrega durantes os Festivais.':
         st.table( fr.tempo_medio_e_desvio_padrao_durante_o_festival(df))   
+
+    elif opcao == '7. O tempo médio e o desvio padrão de entrega por condições climáticas.':
+        st.table( fr.tempo_medio_e_desvio_padrao_por_condicao_climatica(df)) 
+
 
 
 ################################################

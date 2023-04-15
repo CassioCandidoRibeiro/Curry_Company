@@ -496,6 +496,18 @@ def tempo_medio_de_entrega_por_avaliacao_dos_entregadores(df):
   )
   return fig
 
+# 15. Tempo médio de entrega por condição climática.
+def tempo_medio_de_entrega_por_condicao_climatica(df):
+  df_aux = df.loc[:,['Condição climática','Tempo de entrega (min)']].groupby('Condição climática').mean().astype(int).sort_values(by='Tempo de entrega (min)',ascending=True).reset_index()
+  fig = px.bar(
+    df_aux,
+    x='Condição climática',
+    y='Tempo de entrega (min)',
+    title='Tempo médio das entregas por Condição climática',
+  )
+  return fig
+
+
 #######################################
 # Restaurante
 #######################################
@@ -505,6 +517,7 @@ def tempo_medio_de_entrega_por_avaliacao_dos_entregadores(df):
 # 4. O tempo médio e o desvio padrão de entrega por tipo de área e tipo de pedido.
 # 5. O tempo médio e o desvio padrão de entrega por tipo de área e densidade de tráfego.
 # 6. O tempo médio de entrega durantes os Festivais.
+# 7. O tempo médio e o desvio padrão de entrega por condições climáticas.
 #######################################
 
 # 1. A quantidade de entregadores únicos.
@@ -544,6 +557,13 @@ def tempo_medio_e_desvio_padrao_por_tipo_de_trafego(df):
 def tempo_medio_e_desvio_padrao_durante_o_festival(df):
   df_aux = df.loc[:,['Tempo de entrega (min)','Festival']].groupby('Festival').agg({'Tempo de entrega (min)':['mean','median','std']}).round(3).astype(int).reset_index()
   df_aux.columns=['Festival','Tempo médio de entrega (min)','Mediana','Desvio padrão']
+  df_aux.index += 1
+  return df_aux
+
+# 7. O tempo médio e o desvio padrão de entrega por condições climáticas.
+def tempo_medio_e_desvio_padrao_por_condicao_climatica(df):
+  df_aux = df.loc[:,['Tempo de entrega (min)','Condição climática']].groupby('Condição climática').agg({'Tempo de entrega (min)':['mean','median','std']}).round(3).astype(int).reset_index()
+  df_aux.columns=['Condição climática','Tempo médio de entrega (min)','Mediana','Desvio padrão']
   df_aux.index += 1
   return df_aux
 
