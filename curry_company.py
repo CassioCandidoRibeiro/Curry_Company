@@ -88,7 +88,7 @@ df = df.loc[ linhas_filtradas, : ]
 # Botão de Download
 ################################################################
 
-url = "https://github.com/CassioCandidoRibeiro/curry_company/blob/main/curry.csv"
+url = "https://raw.githubusercontent.com/CassioCandidoRibeiro/curry_company/main/curry.csv"
 arquivo = fr.download_csv(url)
 st.sidebar.download_button(
     label="Download do arquivo (.csv) utlizado",
