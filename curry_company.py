@@ -180,7 +180,7 @@ with tab2:
         'Escolha o que deseja ver:',(
             '1. A quantidade de entregadores por idade.',
             '2. A quantidade de veículos em cada condição.',
-            '3. A avaliação médida por entregador.',
+            '3. A avaliação média por entregador.',
             '4. A avaliação média e o desvio padrão por densidade de tráfego.',
             '5. A avaliação média e o desvio padrão por condições climáticas.',
             '6. Os 10 entregadores mais rápidos por tipo de área.',
@@ -199,7 +199,7 @@ with tab2:
     elif opcao == '2. A quantidade de veículos em cada condição.':
         st.plotly_chart( fr.condicao_veiculos(df), ue_container_width=True)
 
-    elif opcao == '3. A avaliação médida por entregador.':
+    elif opcao == '3. A avaliação média por entregador.':
         st.plotly_chart( fr.avaliacao_media_por_entregador(df), ue_container_width=True)
 
     elif opcao == '4. A avaliação média e o desvio padrão por densidade de tráfego.':

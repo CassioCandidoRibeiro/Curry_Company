@@ -314,7 +314,7 @@ def localizacao_central_por_area_e_trafego(df):
 #######################################
 # 1. A quantidade de entregadores por idade.
 # 2. A quantidade de veículos em cada condição.
-# 3. A avaliação médida por entregador.
+# 3. A avaliação média por entregador.
 # 4. A avaliação média e o desvio padrão por densidade de tráfego.
 # 5. A avaliação média e o desvio padrão por condições climáticas.
 # 6. Os 10 entregadores mais rápidos por tipo de área.
