@@ -312,4 +312,4 @@ with tab3:
 ################################################
 # Rodapé
 st.markdown('---')
-st.markdown('Desenvolvido por [**Cássio Cândido Ribeiro**](https://www.linkedin.com/in/cassiocandidoribeiro), em parceria com a **Comunidade DS**.')
+st.markdown('Desenvolvido por [**Cássio Cândido Ribeiro**](https://github.com/CassioCandidoRibeiro/Curry_Company), em parceria com a **Comunidade DS**.')
