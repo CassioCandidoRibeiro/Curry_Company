@@ -56,6 +56,7 @@ Cada visão é representada pelo seguinte conjunto de métricas.
 12. Tempo médio de entrega por idade do entregador.
 13. Tempo médio de entrega por entregas multiplas.
 14. Tempo médio de entrega por avaliação dos entregadores.
+15. Tempo médio de entrega por condição climática.
 
 ## Do lado do restaurantes:
 
