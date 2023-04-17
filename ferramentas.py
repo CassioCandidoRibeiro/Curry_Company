@@ -326,6 +326,7 @@ def localizacao_central_por_area_e_trafego(df):
 # 12. Tempo médio de entrega por idade do entregador.
 # 13. Tempo médio de entrega por entregas multiplas.
 # 14. Tempo médio de entrega por avaliação dos entregadores.
+# 15. Tempo médio de entrega por condição climática.
 #######################################
 
 # 1. A quantidade de entregadores por idade.

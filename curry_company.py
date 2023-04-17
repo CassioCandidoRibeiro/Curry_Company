@@ -73,6 +73,13 @@ filtro_de_clima = st.sidebar.multiselect(
     ['Ensolarado','Nublado','Nebuloso','Ventoso','Tempestuoso','Tempestades de areia'],
     default=['Ensolarado','Nublado','Nebuloso','Ventoso','Tempestuoso','Tempestades de areia'])
 
+# 4. Festival
+filtro_de_festival = st.sidebar.multiselect(
+    'Festival:',
+    ['Sim','Não'],
+    default=['Sim','Não'])
+
+
 # Filtrando o DataFrame
 linhas_filtradas = df['Densidade de tráfego'].isin( filtro_de_trafego )
 df = df.loc[ linhas_filtradas, : ]
@@ -83,10 +90,13 @@ df = df.loc[ linhas_filtradas, : ]
 linhas_filtradas = df['Condição climática'].isin( filtro_de_clima )
 df = df.loc[ linhas_filtradas, : ]
 
+linhas_filtradas = df['Festival'].isin( filtro_de_festival )
+df = df.loc[ linhas_filtradas, : ]
+
 ################################################################
 # Botão de Download
 ################################################################
-
+st.sidebar.write('---')
 url = "https://raw.githubusercontent.com/CassioCandidoRibeiro/curry_company/main/curry.csv"
 arquivo = fr.download_csv(url)
 st.sidebar.download_button(
@@ -174,6 +184,7 @@ with tab1:
 # 12. Tempo médio de entrega por idade do entregador.
 # 13. Tempo médio de entrega por entregas multiplas.
 # 14. Tempo médio de entrega por avaliação dos entregadores.
+# 15. Tempo médio de entrega por condição climática.
 #######################################
 with tab2:
     opcao = st.selectbox(
@@ -262,6 +273,7 @@ with tab2:
 # 4. O tempo médio e o desvio padrão de entrega por tipo de área e tipo de pedido.
 # 5. O tempo médio e o desvio padrão de entrega por tipo de área e densidade de tráfego.
 # 6. O tempo médio de entrega durantes os Festivais.
+# 7. O tempo médio e o desvio padrão de entrega por condições climáticas.
 #######################################
 with tab3:
     opcao= st.selectbox(
@@ -271,7 +283,8 @@ with tab3:
             '3. O tempo médio e o desvio padrão de entrega por tipo de área.',
             '4. O tempo médio e o desvio padrão de entrega por tipo de pedido.',
             '5. O tempo médio e o desvio padrão de entrega por densidade de tráfego.',
-            '6. O tempo médio de entrega durantes os Festivais.'))
+            '6. O tempo médio de entrega durantes os Festivais.',
+            '7. O tempo médio e o desvio padrão de entrega por condições climáticas.'))
     
     if opcao == '1. A quantidade de entregadores únicos.':
         st.header( fr.quantidade_de_entregadores_unicos(df) )
@@ -299,4 +312,4 @@ with tab3:
 ################################################
 # Rodapé
 st.markdown('---')
-st.markdown('Desenvolvido por [**Cássio Cândido Ribeiro**](https://github.com/CassioCandidoRibeiro/Curry_Company), em parceria com a **Comunidade DS**.')
+st.markdown('Desenvolvido por [**Cássio Cândido Ribeiro**](https://www.linkedin.com/in/cassiocandidoribeiro), em parceria com a **Comunidade DS**.')
