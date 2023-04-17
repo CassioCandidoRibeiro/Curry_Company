@@ -33,7 +33,7 @@ st.set_page_config(
     page_title="Empresa", 
     page_icon="logo.png", 
     menu_items=None,
-    layout="wide"
+#     layout="wide"
     )
 
 ################################################
