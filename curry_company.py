@@ -30,8 +30,8 @@ df = fr.limpeza_dos_dados(df)
 ################################################
 
 st.set_page_config(
-    page_title="Empresa", 
-    page_icon="logo.png", 
+    page_title="Curry Company", 
+    page_icon="🛵", 
     menu_items=None,
 #     layout="wide"
     )
