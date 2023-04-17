@@ -33,7 +33,7 @@ st.set_page_config(
     page_title="Curry Company", 
     page_icon="🛵", 
     menu_items=None,
-#     layout="wide"
+    layout="wide"
     )
 
 ################################################
